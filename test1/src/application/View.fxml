@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ViewController">
+   <children>
+      <Label layoutX="202.0" layoutY="22.0" text="Student Informations" textFill="#f50cc3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="153.0" layoutY="457.0" mnemonicParsing="false" onAction="#onClickHome" text="Home" />
+      <Button layoutX="376.0" layoutY="457.0" mnemonicParsing="false" onAction="#onClcikBack" text="Back" />
+      <Separator layoutX="23.0" layoutY="111.0" prefHeight="5.0" prefWidth="578.0" />
+      <TabPane layoutX="6.0" layoutY="59.0" prefHeight="392.0" prefWidth="594.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Search">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="590.0">
+                     <children>
+                        <TableView fx:id="tableContent1" prefHeight="344.0" prefWidth="587.0">
+                           <columns>
+                              <TableColumn fx:id="col_id1" prefWidth="99.0" text="id" />
+                              <TableColumn fx:id="col_name1" prefWidth="136.0" text="Name" />
+                              <TableColumn fx:id="col_email1" prefWidth="172.0" text="E-mail" />
+                              <TableColumn fx:id="col_phone1" minWidth="0.0" prefWidth="192.0" text="Phone Number" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Update">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="32.0" prefWidth="578.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="49.0" text="id " />
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="152.0" text="Name" />
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="172.0" text="e_Mail" />
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="176.0" text="Phone Number" />
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <TableView fx:id="tableContent2" layoutX="1.0" layoutY="59.0" onMouseClicked="#onMouseClicked2" prefHeight="263.0" prefWidth="587.0">
+                          <columns>
+                            <TableColumn fx:id="col_id2" prefWidth="99.0" text="id" />
+                            <TableColumn fx:id="col_name2" prefWidth="136.0" text="Name" />
+                              <TableColumn fx:id="col_email2" prefWidth="172.0" text="E-mail" />
+                              <TableColumn fx:id="col_phone2" minWidth="0.0" prefWidth="192.0" text="Phone Number" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="1.0" layoutY="21.0" prefHeight="32.0" prefWidth="586.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="txt_id2" prefHeight="22.0" prefWidth="67.0" />
+                              <TextField fx:id="txt_name2" prefHeight="22.0" prefWidth="135.0" />
+                              <TextField fx:id="txt_email2" prefHeight="22.0" prefWidth="159.0" />
+                              <TextField fx:id="txt_phone2" prefHeight="22.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="244.0" layoutY="329.0" mnemonicParsing="false" onAction="#onClcikUpdate" text="Update" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Add">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="32.0" prefWidth="578.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="49.0" text="id " />
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="152.0" text="Name" />
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="172.0" text="e_Mail" />
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="176.0" text="Phone Number" />
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <TableView fx:id="tableContent3" layoutX="1.0" layoutY="59.0" onMouseClicked="#onMouseClicked3" prefHeight="263.0" prefWidth="587.0">
+                          <columns>
+                            <TableColumn fx:id="col_id3" prefWidth="99.0" text="id" />
+                            <TableColumn fx:id="col_name3" prefWidth="136.0" text="Name" />
+                              <TableColumn fx:id="col_email3" prefWidth="172.0" text="E-mail" />
+                              <TableColumn fx:id="col_phone3" minWidth="0.0" prefWidth="192.0" text="Phone Number" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="1.0" layoutY="21.0" prefHeight="32.0" prefWidth="586.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="txt_id3" prefHeight="22.0" prefWidth="67.0" />
+                              <TextField fx:id="txt_name3" prefHeight="22.0" prefWidth="135.0" />
+                              <TextField fx:id="txt_email3" prefHeight="22.0" prefWidth="159.0" />
+                              <TextField fx:id="txt_phone3" prefHeight="22.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="244.0" layoutY="329.0" mnemonicParsing="false" onAction="#onClcikAdd" text="Add" />
+                     </children>
+                  </AnchorPane>
+            </content>
+            </Tab>
+            <Tab text="Delete">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="32.0" prefWidth="578.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="49.0" text="id " />
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="152.0" text="Name" />
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="172.0" text="e_Mail" />
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="176.0" text="Phone Number" />
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <TableView fx:id="tableContent4" layoutX="1.0" layoutY="59.0" onMouseClicked="#onMouseClicked4" prefHeight="263.0" prefWidth="587.0">
+                          <columns>
+                            <TableColumn fx:id="col_id4" prefWidth="99.0" text="id" />
+                            <TableColumn fx:id="col_name4" prefWidth="136.0" text="Name" />
+                              <TableColumn fx:id="col_email4" prefWidth="172.0" text="E-mail" />
+                              <TableColumn fx:id="col_phone4" minWidth="0.0" prefWidth="192.0" text="Phone Number" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="1.0" layoutY="21.0" prefHeight="32.0" prefWidth="586.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="txt_id4" prefHeight="22.0" prefWidth="67.0" />
+                              <TextField fx:id="txt_name4" prefHeight="22.0" prefWidth="135.0" />
+                              <TextField fx:id="txt_email4" prefHeight="22.0" prefWidth="159.0" />
+                              <TextField fx:id="txt_phone4" prefHeight="22.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="244.0" layoutY="329.0" mnemonicParsing="false" onAction="#onClcikDelete" text="Delete" />
+                     </children>
+                  </AnchorPane>
+            </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
