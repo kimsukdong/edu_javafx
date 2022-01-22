@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<TabPane prefHeight="380.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <tabs>
+      <Tab text="부피계산">
+         <content>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="620.0">
+               <children>
+                  <TextArea editable="false" layoutX="14.0" layoutY="21.0" prefHeight="101.0" prefWidth="590.0" text="미국에서 부피를 계산하기 위한 기본 정보 : &#10;&#10;1. 주유소에서 기름을 넣을때나 슈퍼에서 우유를 살때 Gallon단위로 판매한다.&#10;2. 스타벅스에서 커피를 주문할때 8oz, 12oz, 16oz,20oz단위로 판매한다.&#10;3. 원유가는 Barrel단위로 기준을 정한다.&#10;4. pub에가서 맥주를 주문할때 Pint나 glass로 주문받는다.&#10;" />
+                  <GridPane layoutX="14.0" layoutY="151.0" prefHeight="170.0" prefWidth="590.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="260.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="50.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="274.0" minWidth="10.0" prefWidth="260.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="txt_org" prefHeight="60.0" prefWidth="210.0" promptText="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_dst" editable="false" prefHeight="60.0" prefWidth="202.0" promptText="1" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <ComboBox fx:id="ComboOrg" onAction="#onComboOrg" prefHeight="55.0" prefWidth="266.0" promptText="리터" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="ComboDst" onAction="#onComboDst" prefHeight="55.0" prefWidth="277.0" promptText="리터" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="48.0" text="=&gt;" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="길이계산">
+         <content>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="620.0">
+               <children>
+                  <TextArea editable="false" layoutX="14.0" layoutY="21.0" prefHeight="101.0" prefWidth="590.0" text="미국에서 길이를 계산하기 위한 기본 정보 : &#10;&#10;1. 이정표 단위가 마일로 표시되어 있다.&#10;2. 산의 높이는 feet로 표기되어 있다.&#10;3. 키를 ft와 inch로 표기한다.&#10;&#10;&#10;" />
+                  <GridPane layoutX="14.0" layoutY="151.0" prefHeight="170.0" prefWidth="590.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="260.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="260.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="txt_lorg" prefHeight="60.0" prefWidth="260.0" promptText="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_ldst" editable="false" prefHeight="60.0" prefWidth="202.0" promptText="1" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <ComboBox fx:id="CombolOrg" onAction="#onCombolOrg" prefHeight="55.0" prefWidth="272.0" promptText="미터" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="CombolDst" onAction="#onCombolDst" prefHeight="55.0" prefWidth="267.0" promptText="미터" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="43.0" text="=&gt;" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="넓이계산">
+         <content>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="620.0">
+               <children>
+                  <TextArea editable="false" layoutX="14.0" layoutY="21.0" prefHeight="101.0" prefWidth="590.0" style="-fx-background-color: #b9bfb4;" text="아파트를 분양할때 이제는 제곱m로 표시하는데 우리가 익숙한 평수를 계산  : &#10;&#10;1. 아파트 령수 계산.&#10;2. 에이커(ac)가 어느정도가 되는지?&#10;3. ha가 어느정도 가 되는지?" />
+                  <GridPane layoutX="14.0" layoutY="151.0" prefHeight="170.0" prefWidth="590.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="260.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="260.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="txt_aorg" prefHeight="60.0" prefWidth="210.0" promptText="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_adst" editable="false" prefHeight="60.0" prefWidth="202.0" promptText="1" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <ComboBox fx:id="ComboaOrg" onAction="#onComboaOrg" prefHeight="55.0" prefWidth="277.0" promptText="평" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="ComboaDst" onAction="#onComboaDst" prefHeight="55.0" prefWidth="271.0" promptText="평" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="46.0" text="=&gt;" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="무게계산">
+         <content>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="620.0">
+               <children>
+                  <TextArea editable="false" layoutX="14.0" layoutY="21.0" prefHeight="101.0" prefWidth="590.0" text="무게를 계산하기 위한 기본 정보 : &#10;&#10;1. 1파운드가 어느 정도인지.&#10;2. 1온스는 몇그램인지.&#10;3. 1kg은 몇돈인지 .&#10;&#10;&#10;" />
+                  <GridPane layoutX="14.0" layoutY="151.0" prefHeight="170.0" prefWidth="590.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="260.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="260.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="txt_morg" prefHeight="60.0" prefWidth="210.0" promptText="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_mdst" editable="false" prefHeight="60.0" prefWidth="202.0" promptText="1" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <ComboBox fx:id="CombomOrg" onAction="#onCombomOrg" prefHeight="55.0" prefWidth="275.0" promptText="Kg" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="CombomDst" onAction="#onCombomDst" prefHeight="55.0" prefWidth="262.0" promptText="kg" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="40.0" text="=&gt;" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="온도계산">
+         <content>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="620.0">
+               <children>
+                  <TextArea editable="false" layoutX="14.0" layoutY="21.0" prefHeight="101.0" prefWidth="590.0" text="온도 를 계산하기 위한 기본 정보 : &#10;&#10;섭씨와 화씨의 변환&#10;&#10;&#10;" />
+                  <GridPane layoutX="14.0" layoutY="151.0" prefHeight="170.0" prefWidth="590.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="260.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="260.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="txt_torg" prefHeight="60.0" prefWidth="210.0" promptText="1" text="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_tdst" editable="false" prefHeight="60.0" prefWidth="276.0" promptText="1" text="1" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <ComboBox fx:id="CombotOrg" onAction="#onCombotOrg" prefHeight="55.0" prefWidth="302.0" promptText="섭씨" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="CombotDst" onAction="#onCombotDst" prefHeight="55.0" prefWidth="291.0" promptText="섭씨" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="46.0" prefWidth="48.0" text="=&gt;" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
