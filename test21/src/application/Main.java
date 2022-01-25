@@ -14,7 +14,7 @@ public class Main extends Application {
 	 * add Add function
 	 * add Delete function
 	 * add Search using tab
-	 * add Add tab
+	 * add Add pane 
 	 */
 	@Override
 	public void start(Stage primaryStage) {
