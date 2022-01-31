@@ -9,7 +9,7 @@ import javafx.fxml.FXMLLoader;
 public class Main extends Application { 
 	/*
 	 * login and new page , make a menu which select a table or a button.
-	 * Select table list then display the list in the textfield.
+	 * Select table list then display the list in the text field.
 	 * add Update function
 	 * add Add function
 	 * add Delete function
