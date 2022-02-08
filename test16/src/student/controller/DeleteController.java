@@ -1,11 +1,13 @@
-
 package student.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import javax.swing.JOptionPane;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,12 +27,15 @@ import javafx.stage.Stage;
 import student.Student;
 import student.mysqlconnect;
 
-public class SearchController {
+public class DeleteController {
 	Connection conn;
 	Statement stmt = null;
+	PreparedStatement pst = null;
 	ResultSet srs;
 	
 	ObservableList<Student> list;
+	String index;
+	
     @FXML
     private TextField txt_email;
 
@@ -62,6 +67,7 @@ public class SearchController {
 		conn = mysqlconnect.ConnectDb();
 		tablelookup();
 	}
+	
 	public void tablelookup() {
 		
 		try {
@@ -92,8 +98,15 @@ public class SearchController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}   
+	
+	public void cleartext() {
+		txt_id.setText("");
+		txt_name.setText("");
+		txt_email.setText("");
+		txt_phone.setText("");
+	}
+	
     @FXML
     void onMouseClicked(MouseEvent event) {
 		TableViewSelectionModel<Student> model = tableContent.getSelectionModel();
@@ -103,6 +116,8 @@ public class SearchController {
 		txt_name.setText(s.getName());
 		txt_email.setText(s.getEmail());
 		txt_phone.setText(s.getPhone());
+		
+		index = s.getId();
     }
 	@FXML
 	void onClickBacktoLogin(ActionEvent event) throws IOException {
@@ -113,14 +128,6 @@ public class SearchController {
 		stage.setScene(scene);
 	}
     @FXML
-    void onClickChoice(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/student/view/ChoiceMenu.fxml"));
-		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		Scene scene = new Scene(root);
-		stage.setTitle("Menu");
-		stage.setScene(scene);
-    }
-    @FXML
     void onClickBacktoMenu(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/student/view/Menu.fxml"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -128,8 +135,38 @@ public class SearchController {
 		stage.setTitle("Menu");
 		stage.setScene(scene);
     }
+    
+    @FXML
+    void onClickChoice(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/student/view/ChoiceMenu.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setTitle("Menu");
+		stage.setScene(scene);
+    }
+    
+    @FXML
+    void onClickDelete(ActionEvent event) {
+		if(index.length()==0) {
+			JOptionPane.showMessageDialog(null, "No id");
+			return ;
+		}
+		int dialogresult = JOptionPane.showConfirmDialog(null, "Do you want to delete this student?");
+		if(dialogresult == JOptionPane.YES_NO_OPTION)
+		{
+			try {
+				pst = conn.prepareStatement("delete from student where id = ?");
+				pst.setString(1, index);
+				pst.executeUpdate();
+				JOptionPane.showMessageDialog(null, "Student Deleted!");
+				tablelookup();						
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		cleartext();
+    }
 }
-
-
 
 

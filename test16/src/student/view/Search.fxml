@@ -28,15 +28,6 @@
             <TableColumn fx:id="col_phone" minWidth="0.0" prefWidth="178.0" style="-fx-background-color: pink;" text="Phone Number" />
         </columns>
       </TableView>
-      <Button layoutX="307.0" layoutY="479.0" mnemonicParsing="false" onAction="#onClickBacktoLogin" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: red;" text="BacktoLogin" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font></Button>
-      <Button layoutX="137.0" layoutY="479.0" mnemonicParsing="false" onAction="#onClickBacktoMenu" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: green;" text="BacktoMenu" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
       <HBox layoutX="7.0" layoutY="80.0" prefHeight="35.0" prefWidth="633.0" spacing="10.0">
          <children>
             <Label alignment="CENTER" prefHeight="23.0" prefWidth="91.0" text="id" textFill="WHITE">
@@ -79,6 +70,25 @@
                <font>
                   <Font size="14.0" />
                </font></TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="7.0" layoutY="486.0" prefHeight="35.0" prefWidth="624.0" spacing="50.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onClickChoice" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: pink;" text="ToChoice">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onClickBacktoMenu" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: green;" text="BacktoMenu" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onClickBacktoLogin" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: red;" text="BacktoLogin" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
          </children>
       </HBox>
    </children>

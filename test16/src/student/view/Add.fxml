@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="535.0" prefWidth="640.0" style="-fx-background-color: darkblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="student.controller.UpdateController">
+<AnchorPane prefHeight="535.0" prefWidth="640.0" style="-fx-background-color: darkblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="student.controller.AddController">
    <children>
       <HBox alignment="CENTER" prefHeight="80.0" prefWidth="640.0" style="-fx-background-color: brown;">
          <children>
@@ -72,9 +72,9 @@
                </font></TextField>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutY="486.0" prefHeight="35.0" prefWidth="633.0" spacing="30.0">
+      <HBox alignment="CENTER" layoutX="8.0" layoutY="471.0" prefHeight="51.0" prefWidth="624.0" spacing="50.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#onClickUpdate" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: cyan;" text="Update">
+            <Button mnemonicParsing="false" onAction="#onClickAdd" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: yellow;" text="Add">
                <font>
                   <Font size="14.0" />
                </font>

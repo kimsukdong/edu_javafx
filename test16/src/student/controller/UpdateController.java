@@ -135,6 +135,14 @@ public class UpdateController {
 		stage.setTitle("Menu");
 		stage.setScene(scene);
     }
+    @FXML
+    void onClickChoice(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/student/view/ChoiceMenu.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setTitle("Menu");
+		stage.setScene(scene);
+    }
     
     @FXML
     void onClickUpdate(ActionEvent event) {
