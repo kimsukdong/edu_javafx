@@ -1,11 +1,13 @@
-
 package student.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import javax.swing.JOptionPane;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,12 +27,15 @@ import javafx.stage.Stage;
 import student.Student;
 import student.mysqlconnect;
 
-public class SearchController {
+public class UpdateController {
 	Connection conn;
 	Statement stmt = null;
+	PreparedStatement pst = null;
 	ResultSet srs;
 	
 	ObservableList<Student> list;
+	String index;
+	
     @FXML
     private TextField txt_email;
 
@@ -62,6 +67,7 @@ public class SearchController {
 		conn = mysqlconnect.ConnectDb();
 		tablelookup();
 	}
+	
 	public void tablelookup() {
 		
 		try {
@@ -92,8 +98,15 @@ public class SearchController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}   
+	
+	public void cleartext() {
+		txt_id.setText("");
+		txt_name.setText("");
+		txt_email.setText("");
+		txt_phone.setText("");
+	}
+	
     @FXML
     void onMouseClicked(MouseEvent event) {
 		TableViewSelectionModel<Student> model = tableContent.getSelectionModel();
@@ -103,6 +116,8 @@ public class SearchController {
 		txt_name.setText(s.getName());
 		txt_email.setText(s.getEmail());
 		txt_phone.setText(s.getPhone());
+		
+		index = s.getId();
     }
 	@FXML
 	void onClickBacktoLogin(ActionEvent event) throws IOException {
@@ -120,8 +135,42 @@ public class SearchController {
 		stage.setTitle("Menu");
 		stage.setScene(scene);
     }
+    
+    @FXML
+    void onClickUpdate(ActionEvent event) {
+    	String r1 = txt_id.getText();
+		String r2 = txt_name.getText();
+		String r3 = txt_email.getText();
+		String r4 = txt_phone.getText();
+		if(r1.length()==0) {
+			JOptionPane.showMessageDialog(null, "No id");
+			return ;
+		}
+
+		try {
+			pst = conn.prepareStatement("update student set name= ?, email=?,phone=? where id = ?");
+			pst.setString(1, r2);
+			pst.setString(2, r3);
+			pst.setString(3, r4);
+			pst.setString(4, r1);
+
+
+			if(index.equals(r1)) {
+				JOptionPane.showMessageDialog(null, "Student update!");
+				pst.executeUpdate();
+			} else
+			{
+				JOptionPane.showMessageDialog(null, "Different id");
+			}
+			
+			cleartext();
+			tablelookup();	
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
 }
-
-
 
 

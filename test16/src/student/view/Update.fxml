@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="535.0" prefWidth="640.0" style="-fx-background-color: darkblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="student.controller.SearchController">
+<AnchorPane prefHeight="535.0" prefWidth="640.0" style="-fx-background-color: darkblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="student.controller.UpdateController">
    <children>
       <HBox alignment="CENTER" prefHeight="80.0" prefWidth="640.0" style="-fx-background-color: brown;">
          <children>
@@ -28,11 +28,11 @@
             <TableColumn fx:id="col_phone" minWidth="0.0" prefWidth="178.0" style="-fx-background-color: pink;" text="Phone Number" />
         </columns>
       </TableView>
-      <Button layoutX="307.0" layoutY="479.0" mnemonicParsing="false" onAction="#onClickBacktoLogin" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: red;" text="BacktoLogin" textFill="WHITE">
+      <Button layoutX="447.0" layoutY="479.0" mnemonicParsing="false" onAction="#onClickBacktoLogin" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: red;" text="BacktoLogin" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button layoutX="137.0" layoutY="479.0" mnemonicParsing="false" onAction="#onClickBacktoMenu" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: green;" text="BacktoMenu" textFill="WHITE">
+      <Button layoutX="248.0" layoutY="479.0" mnemonicParsing="false" onAction="#onClickBacktoMenu" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: green;" text="BacktoMenu" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -81,5 +81,10 @@
                </font></TextField>
          </children>
       </HBox>
+      <Button layoutX="62.0" layoutY="479.0" mnemonicParsing="false" onAction="#onClickUpdate" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: cyan;" text="Update">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

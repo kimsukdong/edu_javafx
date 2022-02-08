@@ -13,7 +13,7 @@ public class Main extends Application {
 	 * add Update function
 	 * add Add function
 	 * add Delete function
-	 * Modify the design
+	 * Modify the designadmin	admin
 	 */
 	@Override
 	public void start(Stage primaryStage) {
